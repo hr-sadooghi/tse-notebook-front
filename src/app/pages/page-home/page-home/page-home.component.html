@@ -1,0 +1,99 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>TSE note book</span>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>
+
+
+<div class="container-fluid h-100" dir="rtl">
+
+  <div class="row">
+
+
+
+    <div class="col-4">
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="جستجوی نماد" >
+      </mat-form-field>
+
+
+      <mat-card>
+<!--        <mat-card-header class="">-->
+<!--          -->
+<!--        </mat-card-header>-->
+
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <bdi>تاپکیش</bdi>
+              <mat-icon  aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>خزامیاد</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>کگهر</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+
+    <div class="col-8">
+      <mat-card>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+
+      </mat-card>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
