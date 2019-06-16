@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterListPipe implements PipeTransform {
 
 
-  transform(value: Array<any> , args?: String ): any {
+  transform(value: Array<any> , args?: string ): any {
     const pattern = new RegExp(args.toString());
     if (!args) {
       return value;
