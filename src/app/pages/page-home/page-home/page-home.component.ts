@@ -22,12 +22,21 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 
+
 @Component({
   selector: 'app-page-home',
   templateUrl: './page-home.component.html',
   styleUrls: ['./page-home.component.scss']
 })
 export class PageHomeComponent implements OnInit {
+
+
+  Namad: Array<any> = [
+    {name: 'تاپکیش' , id: 1},
+    {name: 'رزن' , id: 1},
+    {name: 'خسایپا' , id: 1},
+    {name: 'ایران خودرو' , id: 1}
+  ];
 
 
   constructor() { }

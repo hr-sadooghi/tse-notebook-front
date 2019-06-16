@@ -16,7 +16,7 @@
     <div class="col-4">
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="جستجوی نماد" >
+        <input #searchValue matInput placeholder="جستجوی نماد" >
       </mat-form-field>
 
 
@@ -27,14 +27,9 @@
 
         <mat-card-content>
           <mat-list>
-            <mat-list-item>
-              <bdi>تاپکیش</bdi>
-              <mat-icon  aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-            </mat-list-item>
+
+            <mat-list-item *ngFor="let item of Namad | filterList:searchValue.value " [innerHTML]="item.name"></mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>خزامیاد</mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item>کگهر</mat-list-item>
           </mat-list>
         </mat-card-content>
       </mat-card>
@@ -43,6 +38,9 @@
 
 
     <div class="col-8">
+
+
+
       <mat-card>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 

@@ -8,9 +8,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule, MatDividerModule, MatIconModule, MatInputModule, MatTableModule} from '@angular/material';
+import {FilterListPipe} from '../../core/pip/filter-list.pipe';
 
 @NgModule({
-  declarations: [PageHomeComponent],
+  declarations: [
+    FilterListPipe,
+    PageHomeComponent
+  ],
   imports: [
     CommonModule,
     PageHomeRoutingModule,
@@ -21,7 +25,7 @@ import {MatCardModule, MatDividerModule, MatIconModule, MatInputModule, MatTable
     MatTableModule,
     MatDividerModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
   ]
 })
 export class PageHomeModule { }
