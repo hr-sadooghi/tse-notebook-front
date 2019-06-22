@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NamadListService} from '../../../core/services/namad-list/namad-list.service';
 
 export interface PeriodicElement {
   name: string;
@@ -31,21 +32,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class PageHomeComponent implements OnInit {
 
 
-  Namad: Array<any> = [
-    {name: 'تاپکیش' , id: 1},
-    {name: 'رزن' , id: 1},
-    {name: 'خسایپا' , id: 1},
-    {name: 'ایران خودرو' , id: 1}
-  ];
+  Namad: Array<any> ;
 
 
-  constructor() { }
+  constructor(private namadListService: NamadListService) { }
 
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
   ngOnInit() {
+    this.namadListService.getNamadList().subscribe(
+      (companies: any) => {
+        this.Namad = companies;
+        console.warn(companies);
+      }
+    );
   }
 
 
