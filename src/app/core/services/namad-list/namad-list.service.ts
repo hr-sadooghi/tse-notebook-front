@@ -10,7 +10,7 @@ export class NamadListService {
 
 
   public getNamadList() {
-    return this.apiCoreService.getRequest(this.apiCoreService.apiUrl + 'companies');
+    return this.apiCoreService.getRequest(this.apiCoreService.apiUrl + 'companies/favorites');
   }
 
   public favoriteNamad(namad) {
