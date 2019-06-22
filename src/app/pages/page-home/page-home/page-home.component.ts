@@ -35,8 +35,6 @@ export class PageHomeComponent implements OnInit {
 
   favorite(item: any) {
 
-
-
     if (item.favorite) {
       this.namadListService.unfavouriteNamad(item.id).subscribe(
         (data) => {
