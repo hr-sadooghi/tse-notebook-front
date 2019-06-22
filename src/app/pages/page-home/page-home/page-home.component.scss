@@ -4,3 +4,13 @@
 }
 
 
+.favorite-item{
+  cursor: pointer;
+  color: #ff9100   ;
+}
+
+
+.list-group-item:hover{
+  background-color: #fafafa;
+  transition: all 1000ms ;
+}

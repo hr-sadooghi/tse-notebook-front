@@ -13,9 +13,10 @@ export class NamadListService {
     return this.apiCoreService.getRequest(this.apiCoreService.apiUrl + 'companies/favorites');
   }
 
-  public favoriteNamad(namad) {
-    const body = JSON.stringify(namad);
-    const url = this.apiCoreService.apiUrl + 'api/v1/auth/request';
+  public favoriteNamad(id: number) {
+    // const body = JSON.stringify({company_id: id});
+    const body = '';
+    const url = this.apiCoreService.apiUrl + 'users/favorites/companies/' + id;
     return this.apiCoreService.postRequest(url, body);
   }
 

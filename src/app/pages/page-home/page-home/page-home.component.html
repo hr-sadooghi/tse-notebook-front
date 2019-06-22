@@ -84,7 +84,9 @@
           <div>
             <p class="my-0" [innerHTML]="item.name"></p>
           </div>
-          <span class="text-muted">*</span>
+          <span class="text-muted">
+            <i [ngClass]="item.favorite ? 'fas fa-heart' : 'far fa-heart'" class="favorite-item" (click)="favorite(item.id)"></i>
+          </span>
         </li>
       </ul>
 
