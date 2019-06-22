@@ -34,12 +34,26 @@ export class PageHomeComponent implements OnInit {
   }
 
   favorite(id: number) {
-    this.namadListService.favoriteNamad(id).subscribe(
-      (data) => {
-        this.getNamadList();
-        alert('ok');
-      }
-    );
+
+    if (id) {
+      this.namadListService.unfavouriteNamad(id).subscribe(
+        (data) => {
+          console.warn(data);
+          this.getNamadList();
+          alert('ok');
+        }
+      );
+
+    } else {
+      this.namadListService.favoriteNamad(id).subscribe(
+        (data) => {
+          console.warn(data);
+          this.getNamadList();
+          alert('ok');
+        }
+      );
+    }
+
 
   }
 

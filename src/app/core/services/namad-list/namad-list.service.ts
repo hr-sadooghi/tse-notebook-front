@@ -14,11 +14,17 @@ export class NamadListService {
   }
 
   public favoriteNamad(id: number) {
-    // const body = JSON.stringify({company_id: id});
     const body = '';
     const url = this.apiCoreService.apiUrl + 'users/favorites/companies/' + id;
     return this.apiCoreService.postRequest(url, body);
   }
+
+  public unfavouriteNamad(id: number) {
+    const url = this.apiCoreService.apiUrl + 'users/favorites/companies/' + id;
+    return this.apiCoreService.deleteRequest(url);
+  }
+
+
 
 
 }
