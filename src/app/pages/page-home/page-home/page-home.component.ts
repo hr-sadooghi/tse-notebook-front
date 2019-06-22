@@ -33,10 +33,12 @@ export class PageHomeComponent implements OnInit {
     );
   }
 
-  favorite(id: number) {
+  favorite(item: any) {
 
-    if (id) {
-      this.namadListService.unfavouriteNamad(id).subscribe(
+
+
+    if (item.favorite) {
+      this.namadListService.unfavouriteNamad(item.id).subscribe(
         (data) => {
           console.warn(data);
           this.getNamadList();
@@ -45,7 +47,7 @@ export class PageHomeComponent implements OnInit {
       );
 
     } else {
-      this.namadListService.favoriteNamad(id).subscribe(
+      this.namadListService.favoriteNamad(item.id).subscribe(
         (data) => {
           console.warn(data);
           this.getNamadList();

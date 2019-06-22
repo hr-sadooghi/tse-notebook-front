@@ -85,7 +85,7 @@
             <p class="my-0" [innerHTML]="item.name"></p>
           </div>
           <span class="text-muted">
-            <i [ngClass]="item.favorite ? 'fas fa-star' : 'far fa-star'" class="favorite-item" (click)="favorite(item.id)"></i>
+            <i [ngClass]="item.favorite ? 'fas fa-star' : 'far fa-star'" class="favorite-item" (click)="favorite(item)"></i>
           </span>
         </li>
       </ul>
