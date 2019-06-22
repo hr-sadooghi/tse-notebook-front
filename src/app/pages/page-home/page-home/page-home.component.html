@@ -73,12 +73,12 @@
 
       <div class="card p-2 mb-2">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="جستجوی نماد"  #search>
+          <input class="form-control" placeholder="جستجوی نماد"  #searchValue>
         </div>
       </div>
 
       <ul class="list-group mb-3 pr-0 namad-list">
-        <li *ngFor="let item of Namad | filterList:search.value" class="list-group-item d-flex justify-content-between">
+        <li *ngFor="let item of namad | filterList:searchValue.value" class="list-group-item d-flex justify-content-between">
           <div>
             <h6 class="font-weight-bold">
               {{item.symbol}}

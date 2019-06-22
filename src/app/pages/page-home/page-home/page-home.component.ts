@@ -11,7 +11,7 @@ import {NamadListService} from '../../../core/services/namad-list/namad-list.ser
 export class PageHomeComponent implements OnInit {
 
 
-  Namad: Array<{
+  namad: Array<{
     favorite: any;
     id: number;
     name: string;
@@ -29,7 +29,7 @@ export class PageHomeComponent implements OnInit {
 
   private getNamadList() {
     this.namadListService.getNamadList().subscribe(
-      (companies: any) => {this.Namad = companies; }
+      (companies: any) => {this.namad = companies; }
     );
   }
 

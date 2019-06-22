@@ -15,7 +15,7 @@ export class FilterListPipe implements PipeTransform {
       return value;
     } else {
       return value.filter((item) => {
-        return pattern.test(item.name);
+        return pattern.test(item.name) || pattern.test(item.symbol);
       });
     }
   }
