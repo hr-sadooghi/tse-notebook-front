@@ -82,8 +82,10 @@
       <ul class="list-group mb-3 pr-0 namad-list">
         <li *ngFor="let item of Namad | filterList:searchValue.value" class="list-group-item d-flex justify-content-between">
           <div>
-            <p class="my-0"> {{item.symbol}} <sub [innerHTML]="item.name"></sub></p>
-
+            <h6 class="font-weight-bold">
+              {{item.symbol}}
+              <small class="text-muted" [innerHTML]="item.name"></small>
+            </h6>
           </div>
           <span class="text-muted">
             <i [ngClass]="item.favorite ? 'fas fa-star' : 'far fa-star'" class="favorite-item" (click)="favorite(item)"></i>
