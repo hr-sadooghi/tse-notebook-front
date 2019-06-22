@@ -4,10 +4,6 @@ import { CommonModule } from '@angular/common';
 import { PageHomeRoutingModule } from './page-home-routing.module';
 import { PageHomeComponent } from './page-home/page-home.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatListModule} from '@angular/material/list';
-import {MatCardModule, MatDividerModule, MatIconModule, MatInputModule, MatTableModule} from '@angular/material';
 import {FilterListPipe} from '../../core/pip/filter-list.pipe';
 
 @NgModule({
@@ -18,14 +14,6 @@ import {FilterListPipe} from '../../core/pip/filter-list.pipe';
   imports: [
     CommonModule,
     PageHomeRoutingModule,
-    MatGridListModule,
-    MatListModule,
-    MatIconModule,
-    MatInputModule,
-    MatTableModule,
-    MatDividerModule,
-    MatCardModule,
-    MatToolbarModule,
   ]
 })
 export class PageHomeModule { }
