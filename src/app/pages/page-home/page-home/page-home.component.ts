@@ -57,4 +57,9 @@ export class PageHomeComponent implements OnInit {
 
   }
 
+
+  getNamadInfo(item) {
+    console.warn(item);
+  }
+
 }

@@ -1,18 +1,18 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info">
-  <a class="navbar-brand" href="#">Fixed navbar</a>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top " dir="rtl">
+  <a class="navbar-brand" href="#">یاداشتی</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">یادداشت ها<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">برترین ها</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="#">مشاوران</a>
       </li>
     </ul>
 
@@ -28,44 +28,15 @@
   <div class="row">
 
     <div class="col-md-8 ">
-      <div class="card mb-3">
-        <div class="card-header text-center">
-          <bdi> خزامیاد </bdi>
-        </div>
-        <div class="card-body text-right">
-          <bdi>خزامیاد - خودرو سازی بوشهر -3500</bdi><br>
-          <bdi>گروه خدرو سازی - خودرو سازی بوشهر -3500</bdi>
-
-        </div>
-      </div>
+      <app-namad-info></app-namad-info>
 
 
       <button type="button" class="btn btn-block btn-success">افزودن رویداد</button>
-      <div class="card mt-1 ">
 
-        <table class="table" dir="rtl">
-          <thead class="text-center">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">زمان ثبت رویداد</th>
-              <th scope="col">نوع رویداد</th>
-              <th scope="col">وضعیت</th>
-              <th scope="col">شرح رویداد</th>
-              <th scope="col">عملیات</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr>
-              <th scope="row">1</th>
-              <td>1397/12/20</td>
-              <td>فروش</td>
-              <td>کامل انجام شده</td>
-              <td>فروش تعداد 200 سهم از موجودی پارسال</td>
-              <td>ویرایش</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <app-namad-event-list></app-namad-event-list>
+
+
+<!--      <app-set-picture> </app-set-picture>-->
 
     </div>
 
@@ -74,13 +45,18 @@
       <div class="card p-2 mb-2">
         <div class="input-group">
           <input class="form-control" placeholder="جستجوی نماد"  #searchValue>
+          <ul class="list-group search-suggest">
+            <li class="list-group-item">تست 1</li>
+            <li class="list-group-item">تست 2</li>
+            <li class="list-group-item">تستت 3</li>
+          </ul>
         </div>
       </div>
 
       <ul class="list-group mb-3 pr-0 namad-list">
         <li *ngFor="let item of namad | filterList:searchValue.value" class="list-group-item d-flex justify-content-between">
-          <div>
-            <h6 class="font-weight-bold">
+          <div (click)="getNamadInfo(item)">
+            <h6 class="font-weight-bold" >
               {{item.symbol}}
               <small class="text-muted" [innerHTML]="item.name"></small>
             </h6>

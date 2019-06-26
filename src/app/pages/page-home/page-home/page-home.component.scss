@@ -14,3 +14,19 @@
   background-color: #fafafa;
   transition: all 1000ms ;
 }
+
+.search-suggest{
+  clear: both;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  z-index: 1;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+.navbar-collapse ul{
+  margin-right: unset !important;
+  margin-left: auto !important;
+}
